@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Hills School – Sample School Website</title>
+  <style>
+    :root {
+      --navy: #17324d;
+      --green: #2f7d4f;
+      --gold: #e0a526;
+      --paper: #f7f9fb;
+      --ink: #1d2733;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--paper); line-height: 1.65; }
+    h1, h2, h3, nav, .btn, label, button { font-family: "Trebuchet MS", Arial, sans-serif; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+    /* Header */
+    header { background: var(--navy); color: var(--white); position: sticky; top: 0; z-index: 10; }
+    .bar { max-width: 1100px; margin: auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .logo { font-size: 1.3rem; font-weight: bold; text-decoration: none; font-family: "Trebuchet MS", Arial, sans-serif; }
+    nav ul { list-style: none; display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { text-decoration: none; font-size: .95rem; padding-bottom: 3px; border-bottom: 2px solid transparent; }
+    nav a:hover { border-color: var(--gold); }
+
+    /* Hero */
+    .hero { background: linear-gradient(rgba(23,50,77,.82), rgba(23,50,77,.82)), #284b6b; color: var(--white); text-align: left; }
+    .hero div { max-width: 1100px; margin: auto; padding: 90px 20px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 16ch; line-height: 1.15; margin-bottom: 16px; }
+    .hero p { max-width: 55ch; font-size: 1.1rem; margin-bottom: 26px; }
+    .btn { display: inline-block; background: var(--gold); color: var(--navy); padding: 12px 24px; border-radius: 6px; font-weight: bold; text-decoration: none; border: 0; cursor: pointer; font-size: 1rem; }
+    .btn:hover { background: #f0b73a; }
+
+    /* Sections */
+    section { padding: 64px 20px; }
+    .wrap { max-width: 1100px; margin: auto; }
+    h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 8px; }
+    .lead { max-width: 65ch; margin-bottom: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .card { background: var(--white); border-left: 5px solid var(--green); padding: 22px; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .card h3 { margin-bottom: 8px; color: var(--navy); }
+    .alt { background: var(--white); }
+
+    /* News */
+    .news-item { display: flex; gap: 18px; padding: 14px 0; border-bottom: 1px solid #dde3e9; }
+    .date { min-width: 78px; font-family: "Trebuchet MS", Arial, sans-serif; font-weight: bold; color: var(--green); }
+
+    /* Contact form */
+    form { max-width: 520px; display: grid; gap: 14px; }
+    label { font-weight: bold; font-size: .9rem; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #aab4be; border-radius: 4px; font: inherit; margin-top: 4px; }
+
+    footer { background: var(--navy); color: #cdd8e3; text-align: center; padding: 26px 20px; font-size: .9rem; }
+
+    @media (max-width: 600px) { nav ul { gap: 14px; } .hero div { padding: 60px 20px; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="bar">
+      <a class="logo" href="#home">Green Hills School</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="hero">
+      <div>
+        <h1>Learning that prepares students for life</h1>
+        <p>Green Hills School offers quality education from primary to secondary level, with caring teachers and modern classrooms.</p>
+        <a class="btn" href="#contact">Apply for admission</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About our school</h2>
+        <p class="lead">Founded in 2005, we serve more than 800 students. Our teachers focus on strong foundations in mathematics, languages, science and technology, together with good character and teamwork.</p>
+        <div class="grid">
+          <div class="card"><h3>Our mission</h3><p>To give every learner the knowledge and values needed to succeed and serve the community.</p></div>
+          <div class="card"><h3>Our vision</h3><p>A school where every student is confident, curious and ready for the future.</p></div>
+          <div class="card"><h3>Our values</h3><p>Respect, honesty, hard work and responsibility.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="alt">
+      <div class="wrap">
+        <h2>Programs</h2>
+        <p class="lead">Choose from the following levels and combinations.</p>
+        <div class="grid">
+          <div class="card"><h3>Primary (P1–P6)</h3><p>Literacy, numeracy and creative learning in a safe environment.</p></div>
+          <div class="card"><h3>Lower secondary (S1–S3)</h3><p>Broad curriculum with science labs and ICT lessons.</p></div>
+          <div class="card"><h3>Upper secondary (S4–S6)</h3><p>Specialised combinations that prepare students for university and careers.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="wrap">
+        <h2>News and events</h2>
+        <div class="news-item"><span class="date">12 Nov</span><p>Parents' meeting for all classes starts at 9:00 in the main hall.</p></div>
+        <div class="news-item"><span class="date">20 Nov</span><p>Inter-school mathematics and science competition.</p></div>
+        <div class="news-item"><span class="date">05 Dec</span><p>End-of-term exams begin. Timetables are available at the office.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="alt">
+      <div class="wrap">
+        <h2>Contact us</h2>
+        <p class="lead">Address: P.O. Box 123, Your Town. Phone: +250 788 000 000. Email: info@greenhills.example</p>
+        <form onsubmit="event.preventDefault(); document.getElementById('msg').textContent='Thank you. We will reply soon.';">
+          <label>Your name <input type="text" name="name" required></label>
+          <label>Email <input type="email" name="email" required></label>
+          <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <button class="btn" type="submit">Send message</button>
+          <p id="msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Green Hills School. All rights reserved.</footer>
+
+</body>
+</html>
